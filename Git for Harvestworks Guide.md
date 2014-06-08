@@ -1,9 +1,9 @@
-Git for Harvestworks
-====================
+Git for Harvestworks Setup Guide
+================================
 
 #### *A Rough Guide to getting up and running with Git on your projects.*
 #### by Johnny Sullivan | [johnnyvenom.com](http://johnnyvenom.com "Johnny Venom Media") | Jun 4, 2014
-#### *Check out my [Harvestworks Resources Dropbox folder](https://www.dropbox.com/sh/mp0ng6ujy7x4kvs/AAC3-iFWegQSOqHh7WA_SnGia) for this and other guides and resources.*
+#### *Check out my [Harvestworks Resources on GitHub](http://github.com/Harvestworks/Resources) for this and other guides and resources.*
 
 ## Overview
 **What is Git?**  Git is a distributed version control system for synchronizing and managing software, files and assets for projects. It is especially useful for group development, where several team members may be working on various pieces of a project simultaneously. 
