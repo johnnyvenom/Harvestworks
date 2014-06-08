@@ -25,7 +25,7 @@ This guide is a work in progress...
 - Awesome tutorials that work and are usually easy to follow:
 	- [Adafruit - Learn Respberry Pi](https://learn.adafruit.com/category/learn-raspberry-pi)
 
-------------
+------------	
 
 ## Initial Setup (NOOBS)
 One other note, if you buy a RPi kit, it will come with a lot of the stuff listed here, and with a prewritten SD card. The following assumes you are doing this from scratch. 
@@ -87,6 +87,7 @@ So the immediate problem with the RPi is that you need to have keyboard, mouse a
 Access Raspberry Pi command line remotely via SSH [here](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-6-using-ssh).
 
 What you really want though, is to be able to just screen share from your Finder sidebar. [Do this here](http://4dc5.com/2012/06/12/setting-up-vnc-on-raspberry-pi-for-mac-access/). *This way your don't even need a VNC client on a Mac.* 
+- **Note:** On roughly the 8th step, when writing the startup script that starts with `#!/bin/bash`, scroll down to the **Update** at the bottom of the pages and use this script instead. It works much better. 
 
 ### Backing up your SD card
 
