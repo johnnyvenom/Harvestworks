@@ -1,10 +1,10 @@
-Raspberry Pi for Harvestworks!!
-=============================
+Raspberry Pi for Harvestworks Startup Guide
+===========================================
 
 A Guide to the basics of set and configuration of Raspberry Pi for use with Pure Data and other valuable tools.  
 
 #### by Johnny Sullivan | [johnnyvenom.com][ref1] | Jun 6, 2014
-#### [Here are some resources for RPi, Arduino, coding, etc. that you will find helpful](https://www.dropbox.com/sh/mp0ng6ujy7x4kvs/AAC3-iFWegQSOqHh7WA_SnGia)
+#### [Here are some resources for RPi, Arduino, coding, etc. that you will find helpful](http://github.com/Harvestworks/Resources)
 
 ## Introduction
 Here is a down and dirty guide to getting up and running on the Raspberry Pi for Harvestworks projects this summer. It skips through the basic setup quickly, but will link to online tutorials for various processes. 
@@ -24,6 +24,8 @@ This guide is a work in progress...
 	- [RPi Forums](http://www.raspberrypi.org/forums/)
 - Awesome tutorials that work and are usually easy to follow:
 	- [Adafruit - Learn Respberry Pi](https://learn.adafruit.com/category/learn-raspberry-pi)
+
+------------	
 
 ## Initial Setup (NOOBS)
 One other note, if you buy a RPi kit, it will come with a lot of the stuff listed here, and with a prewritten SD card. The following assumes you are doing this from scratch. 
@@ -85,10 +87,21 @@ So the immediate problem with the RPi is that you need to have keyboard, mouse a
 Access Raspberry Pi command line remotely via SSH [here](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-6-using-ssh).
 
 What you really want though, is to be able to just screen share from your Finder sidebar. [Do this here](http://4dc5.com/2012/06/12/setting-up-vnc-on-raspberry-pi-for-mac-access/). *This way your don't even need a VNC client on a Mac.* 
+- **Note:** On roughly the 8th step, when writing the startup script that starts with `#!/bin/bash`, scroll down to the **Update** at the bottom of the pages and use this script instead. It works much better. 
+
+### Backing up your SD card
+
+I haven't tried this out yet, but it is good to make a backup so if you run into problems with your current configuration and need to get back to a stable operating platform, you can just flash a new card rather than start back out at the very beginning. 
+
+Also, for Harvestworks, we can keep one or more backups on our project folder, so if we need a disk image, it is there for us to grab easily. 
+
+[Here is a guide](http://minordiscoveries.wordpress.com/2013/03/30/backing-up-raspberry-pi-sd-card-on-mac-os-x/). No guarantees for its reliability yet, but the internet says it works and its one of the better ones out there. 
+
+---------------
 
 ## Installing Software and Advanced Configuration for Projects
 
-### Pure 
+### Pure Data
 - Installation: 
 	- [Follow this tutorial](http://puredata.info/downloads/pd-extended-0-43-3-on-raspberry-pi-raspbian-wheezy-armhf)
 	- *However, once you install with the `$ sudo dpkg -i Pd-0.43.3-extended-20121004.deb` command, you will get a message that PD hasn't been configured because of missing dependencies.* 
