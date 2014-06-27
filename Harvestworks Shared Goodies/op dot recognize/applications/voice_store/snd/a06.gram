@@ -1,0 +1,3 @@
+#JSGF V1.0;
+grammar digits;
+public <numbers> = ( so ) ( he ) ( lowered ) ( the ) ( outgrowth ) ( hand ) ( that ) ( had ) ( been ) ( so ) ( pointedly ) ( ignored ) * ; 

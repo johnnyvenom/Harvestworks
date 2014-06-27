@@ -1,0 +1,3 @@
+#JSGF V1.0;
+grammar digits;
+public <numbers> = ( decided ) ( it ) ( was ) ( time ) ( to ) ( take ) ( apart ) * ; 

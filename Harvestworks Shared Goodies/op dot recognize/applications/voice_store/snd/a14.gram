@@ -1,0 +1,3 @@
+#JSGF V1.0;
+grammar digits;
+public <numbers> = ( for ) ( which ) ( the ) ( famous ) ( astronomer ) ( were ) ( noted ) ( did ) ( not ) ( abandoned ) ( him ) * ; 

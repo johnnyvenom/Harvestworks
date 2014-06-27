@@ -1,0 +1,3 @@
+#JSGF V1.0;
+grammar digits;
+public <numbers> = ( when ) ( is ) ( now ) ( widely ) ( syndicated ) ( column ) ( was ) ( only ) ( a ) ( mad ) ( idea ) ( in ) ( a ) ( cop ) ( reporters ) ( mind ) * ; 

@@ -1,0 +1,9 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Digits Grammar for Hello World example
+ */
+
+grammar digits;
+
+public <numbers> = ( I'm ) ( a ) ( nice ) ( dude ) ( with ) ( some ) ( nice ) ( dreams ) ( see ) ( these ) ( ice ) ( cubes ) ( see ) ( these ) ( ice ) ( creams ) ( eligible ) ( bachelor ) ( million ) ( dollar ) ( boat ) ( that's ) ( whiter ) ( than ) ( what's ) ( spilling ) ( down ) ( your ) ( throat ) ( the ) ( phantom ) ( exterior ) ( like ) ( fish ) ( eggs ) ( the ) ( interior ) ( like ) ( suicide ) ( wrist ) ( red ) ( I ) ( can ) ( exercise ) ( you ) ( this ) ( can ) ( be ) ( your ) ( cheat ) ( on ) ( your ) ( man ) ( ma ) ( that's ) ( how ) ( you ) ( get ) ( killer ) ( wit ) ( the ) ( beat ) ( I ) ( know ) ( killers ) ( in ) ( the ) ( street ) ( With ) ( the ) ( steel ) ( that'll ) ( make ) ( you ) ( feel ) ( like ) ( in ) ( the ) ( heat ) ( So ) ( don't ) ( try ) ( to ) ( run ) ( up ) ( on ) ( my ) ( ear ) ( talking ) ( all ) ( that ) ( raspy ) ( shit ) ( Trying ) ( to ) ( ask ) ( me ) ( shit ) ( When ) ( my ) ( nigger ) ( fill ) ( ya ) ( vest ) ( they ) ( ain't ) ( gone ) ( pass ) ( me ) ( shit ) ( You ) ( should ) ( think ) ( about ) ( it ) ( take ) ( a ) ( second ) ( not ) ( a ) ( fact ) ( you ) ( should ) ( take ) ( four ) ( be ) ( And ) ( think ) ( before ) ( you ) ( fuck ) ( wit ) ( lil ) ( skateboard ) ( pi ) * ; 

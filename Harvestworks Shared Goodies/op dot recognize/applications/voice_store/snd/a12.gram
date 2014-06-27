@@ -1,0 +1,3 @@
+#JSGF V1.0;
+grammar digits;
+public <numbers> = ( and ) ( lower ) ( tremble ) ( with ) ( restrain ) ( the ) ( motion ) * ; 

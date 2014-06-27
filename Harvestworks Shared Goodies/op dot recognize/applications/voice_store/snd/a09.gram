@@ -1,0 +1,3 @@
+#JSGF V1.0;
+grammar digits;
+public <numbers> = ( and ) ( the ) ( transaction ) ( of ) ( the ) ( last ) ( two ) ( months ) ( made ) ( anything ) * ; 

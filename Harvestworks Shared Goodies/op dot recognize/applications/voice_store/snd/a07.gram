@@ -1,0 +1,3 @@
+#JSGF V1.0;
+grammar digits;
+public <numbers> = ( and ) ( call ) ( me ) ( waited ) ( for ) ( the ) ( aged ) ( director ) ( to ) ( take ) ( over ) ( the ) ( worst ) * ; 

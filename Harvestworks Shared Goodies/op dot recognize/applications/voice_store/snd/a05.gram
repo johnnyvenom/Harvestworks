@@ -1,0 +1,3 @@
+#JSGF V1.0;
+grammar digits;
+public <numbers> = ( but ) ( is ) ( given ) ( him ) ( an ) ( employ ) ( supply ) ( of ) ( coolness ) ( and ) ( self ) ( confidence ) * ; 

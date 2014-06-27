@@ -1,0 +1,3 @@
+#JSGF V1.0;
+grammar digits;
+public <numbers> = ( he ) ( had ) ( specialized ) ( in ) ( impossible ) ( interviews ) * ; 

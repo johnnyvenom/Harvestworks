@@ -1,0 +1,3 @@
+#JSGF V1.0;
+grammar digits;
+public <numbers> = ( I ) ( will ) ( credit ) ( you ) ( with ) ( good ) ( intention ) ( in ) ( bringing ) ( this ) ( man ) ( here ) * ; 
