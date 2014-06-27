@@ -1,0 +1,358 @@
+#N canvas 0 22 1350 709 10;
+#N canvas 374 204 903 324 serial_port 0;
+#X msg 190 178 close;
+#X obj 190 200 comport 4 9600;
+#X obj 190 156 loadbang;
+#X obj 190 222 print Arduino_Says:;
+#X obj 231 178 r to_serial;
+#X obj 102 102 tgl 14 0 empty empty open_serial_port 17 6 0 10 -262144
+-1 -1 1 1;
+#X msg 142 222 set 1;
+#X msg 102 222 set 0;
+#X obj 142 141 sel 1 0;
+#X text 284 199 creation arguments: <port#> <BAUD>;
+#X text 312 221 if you gave the arduino something to say it appears
+in the console;
+#X text 304 178 send things to the serial port via "to_serial" send
+symbol;
+#X msg 142 178 open 2;
+#X connect 0 0 1 0;
+#X connect 0 0 7 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 8 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 12 0;
+#X connect 8 1 0 0;
+#X connect 12 0 1 0;
+#X connect 12 0 6 0;
+#X coords 0 -1 1 1 120 18 2 100 100;
+#X restore -55 -65 pd serial_port;
+#X text 70 -64 Activate toggle to enable serial connection to Arduino
+;
+#N canvas 245 81 450 300 sub_patch 0;
+#X text 13 10 you can put different code "fragments" or functions in
+these sub-patches within your main patch.;
+#X restore -48 -29 pd sub_patch;
+#X obj -49 12 patch;
+#N canvas 475 231 720 142 sub-patch-i/o 0;
+#X obj 29 17 inlet;
+#X obj 29 87 outlet;
+#X obj 79 18 inlet~;
+#X obj 79 87 outlet~;
+#X text 152 31 In addition to the send/receive and catch/throw objects
+\, and their audio rate send~/receive~ and catch~/throw~ siblings \,
+you can create inlets and outlets to patch signals into and out of
+your sub-patch.;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X restore -48 -9 pd sub-patch-i/o;
+#X obj -49 104 tgl 15 0 toggle1_out toggle1_in toggle1 17 7 0 10 -262144
+-1 -1 0 1;
+#X text -52 64 GUI objects can be given send and receive symbols! right
+or control click on a GUI object \, click properties to see the GUI
+tweaks.;
+#X obj -49 142 s toggle1_in;
+#X obj -49 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj -49 162 r toggle1_out;
+#X obj -49 183 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 65 130 \; toggle1_in 0;
+#X msg 152 130 \; toggle1_in 1;
+#X text 63 111 you can also use message to transmit data to send symbols
+;
+#X text 69 -24 right or control click and select open to view the guts
+of the these objects!;
+#X obj 397 358 tgl 15 0 bit_4_out bit_4_in bit_4 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 486 280 hsl 128 15 30 1000 0 1 metro_1_time empty metro_1_time
+0 7 0 10 -262144 -1 -1 2200 1;
+#X obj 378 280 tgl 15 0 metro_1_start metro_1_start_cmd metro_1_on/off
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 378 257 tgl 15 0 master_on_off empty start/stop 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 486 298 hsl 128 15 30 1000 0 1 metro_2_time empty metro_2_time
+0 7 0 10 -262144 -1 -1 1600 1;
+#X obj 486 316 hsl 128 15 30 1000 0 1 metro_3_time empty metro_3_time
+0 7 0 10 -262144 -1 -1 3100 1;
+#X obj 486 334 hsl 128 15 30 1000 0 1 metro_4_time empty metro_4_time
+0 7 0 10 -262144 -1 -1 4900 1;
+#X floatatom 24 551 5 0 0 0 - - -;
+#X obj 9 454 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 26 454 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 43 454 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 60 454 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj -21 479 t b;
+#X obj 8 524 expr $i1 << 3 | $i2 << 2 | $i3 << 1 | $i4 << 0 \;;
+#X obj 8 570 s to_serial;
+#X obj 14 313 metro 1000;
+#X obj 74 295 hsl 128 15 30 1000 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 14 295 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 14 350 metro 1000;
+#X obj 74 332 hsl 128 15 30 1000 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 14 332 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 14 388 metro 1000;
+#X obj 74 370 hsl 128 15 30 1000 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 14 370 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 14 425 metro 1000;
+#X obj 74 407 hsl 128 15 30 1000 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 14 407 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg -46 416 0;
+#X obj -46 295 tgl 15 0 empty empty on/off 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj -46 336 sel 0;
+#X obj 8 504 pack f f f f;
+#X obj 378 298 tgl 15 0 metro_2_start metro_2_start_cmd metro_2_on/off
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 378 316 tgl 15 0 metro_3_start metro_3_start_cmd metro_3_on/off
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 378 334 tgl 15 0 metro_4_start metro_4_start_cmd metro_4_on/off
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 455 358 tgl 15 0 bit_3_out bit_3_in bit_3 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 508 358 tgl 15 0 bit_2_out bit_2_in bit_2 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 562 358 tgl 15 0 bit_1_out bit_1_in bit_1 17 7 0 10 -262144
+-1 -1 0 1;
+#N canvas 552 289 695 143 metros 0;
+#X obj -17 -132 metro 1000;
+#X obj 134 -132 metro 1000;
+#X obj 134 -112 s bit_4_in;
+#X obj 191 -156 r metro_4_time;
+#X obj 134 -176 r metro_4_start;
+#X obj -17 -112 s bit_3_in;
+#X obj 40 -156 r metro_3_time;
+#X obj -17 -176 r metro_3_start;
+#X obj -324 -130 metro 1000;
+#X obj -267 -156 r metro_1_time;
+#X obj -324 -110 s bit_1_in;
+#X obj -324 -176 r metro_1_start;
+#X obj -171 -131 metro 1000;
+#X obj -171 -111 s bit_2_in;
+#X obj -114 -156 r metro_2_time;
+#X obj -171 -176 r metro_2_start;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 1;
+#X connect 4 0 1 0;
+#X connect 6 0 0 1;
+#X connect 7 0 0 0;
+#X connect 8 0 10 0;
+#X connect 9 0 8 1;
+#X connect 11 0 8 0;
+#X connect 12 0 13 0;
+#X connect 14 0 12 1;
+#X connect 15 0 12 0;
+#X restore 622 294 pd metros;
+#N canvas 835 270 427 242 bit_packer 0;
+#X obj 28 84 t b;
+#X obj 41 155 expr $i1 << 3 | $i2 << 2 | $i3 << 1 | $i4 << 0 \;;
+#X obj 41 201 s to_serial;
+#X obj 41 136 pack f f f f;
+#X obj 87 40 r bit_2_out;
+#X obj 41 2 r bit_4_out;
+#X obj 64 21 r bit_3_out;
+#X obj 110 59 r bit_1_out;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 2;
+#X connect 4 0 0 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 1;
+#X connect 6 0 0 0;
+#X connect 7 0 3 3;
+#X connect 7 0 0 0;
+#X restore 622 313 pd bit_packer;
+#N canvas 628 319 312 181 on/off_messages 0;
+#X obj -95 -422 sel 0;
+#X msg -12 -397 \; metro_1_start_cmd \$1 \; metro_2_start_cmd \$1 \;
+metro_3_start_cmd \$1 \; metro_4_start_cmd \$1 \;;
+#X msg -95 -397 \; bit_1_in 0 \; bit_2_in 0 \; bit_3_in 0 \; bit_4_in
+0 \;;
+#X obj -12 -452 r master_on_off;
+#X connect 0 0 2 0;
+#X connect 3 0 1 0;
+#X connect 3 0 0 0;
+#X restore 622 332 pd on/off_messages;
+#X floatatom 405 390 5 0 0 0 out to_serial -;
+#X text -51 228 This patch is a rough sketch to demonstrate independent
+control of the bits selecting which note is played by the CMOS circuit.
+The expr object is used to perform the bit shifting to pack our toggle
+GUI outputs into a single byte to be transmitted to Arduino over serial.
+;
+#X obj 833 278 bit_metros;
+#N canvas 632 204 450 300 bit_metros_sub_patch 0;
+#N canvas 552 289 695 143 metros 0;
+#X obj -17 -132 metro 1000;
+#X obj 134 -132 metro 1000;
+#X obj -324 -130 metro 1000;
+#X obj -171 -131 metro 1000;
+#X obj -324 -176 r \$0-metro_1_start;
+#X obj -267 -156 r \$0-metro_1_time;
+#X obj -324 -110 s \$0-bit_1_in;
+#X obj -171 -176 r \$0-metro_2_start;
+#X obj -114 -156 r \$0-metro_2_time;
+#X obj -171 -111 s \$0-bit_2_in;
+#X obj -17 -112 s \$0-bit_3_in;
+#X obj 40 -156 r \$0-metro_3_time;
+#X obj -17 -176 r \$0-metro_3_start;
+#X obj 134 -176 r \$0-metro_4_start;
+#X obj 191 -156 r \$0-metro_4_time;
+#X obj 134 -112 s \$0-bit_4_in;
+#X connect 0 0 10 0;
+#X connect 1 0 15 0;
+#X connect 2 0 6 0;
+#X connect 3 0 9 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 1;
+#X connect 7 0 3 0;
+#X connect 8 0 3 1;
+#X connect 11 0 0 1;
+#X connect 12 0 0 0;
+#X connect 13 0 1 0;
+#X connect 14 0 1 1;
+#X restore 462 245 pd metros;
+#N canvas 835 270 427 242 bit_packer 0;
+#X obj 28 84 t b;
+#X obj 41 155 expr $i1 << 3 | $i2 << 2 | $i3 << 1 | $i4 << 0 \;;
+#X obj 41 201 s to_serial;
+#X obj 41 136 pack f f f f;
+#X obj 41 2 r \$0-bit_4_out;
+#X obj 64 21 r \$0-bit_3_out;
+#X obj 87 40 r \$0-bit_2_out;
+#X obj 110 59 r \$0-bit_1_out;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X connect 5 0 0 0;
+#X connect 6 0 3 2;
+#X connect 6 0 0 0;
+#X connect 7 0 3 3;
+#X connect 7 0 0 0;
+#X restore 462 264 pd bit_packer;
+#N canvas 519 264 644 181 on/off_messages 0;
+#X obj -93 -435 sel 0;
+#X floatatom 107 -411 5 0 0 0 - - -;
+#X obj -12 -452 r \$0-master_on_off;
+#X obj 10 -402 pack f \$0;
+#X msg 10 -379 \; \$2-metro_1_start_cmd \$1 \; \$2-metro_2_start_cmd
+\$1 \; \$2-metro_3_start_cmd \$1 \; \$2-metro_4_start_cmd \$1 \;;
+#X obj -93 -415 \$0;
+#X msg -93 -396 \; \$1-bit_1_in 0 \; \$1-bit_2_in 0 \; \$1-bit_3_in
+0 \; \$1-bit_4_in 0 \;;
+#X obj 107 -451 loadbang;
+#X obj 107 -431 \$0;
+#X text 179 -427 \$0 is a unique number that enables multiple instances
+of a patch or sub_patch to run independently. symbols with \$0- prepended
+to them will have a unique number associated with them \, giving them
+a local scope.;
+#X connect 0 0 5 0;
+#X connect 2 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
+#X connect 8 0 1 0;
+#X restore 462 283 pd on/off_messages;
+#X text 457 96 Using the "graph on parent" feature in the properties
+of the patch \, you can create clean self contained GUI oriented modules.
+;
+#X obj 101 101 cnv 15 273 148 empty empty empty 20 12 0 14 -261682
+-66577 0;
+#X obj 107 202 tgl 15 0 \$0-bit_4_out \$0-bit_4_in bit_4 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 215 130 hsl 128 15 30 1000 0 1 \$0-metro_1_time empty metro_1_time
+0 7 0 10 -262144 -1 -1 1900 1;
+#X obj 107 130 tgl 15 0 \$0-metro_1_start \$0-metro_1_start_cmd metro_1_on/off
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 107 108 tgl 15 0 \$0-master_on_off empty start/stop 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 215 148 hsl 128 15 30 1000 0 1 \$0-metro_2_time empty metro_2_time
+0 7 0 10 -262144 -1 -1 2200 1;
+#X obj 215 166 hsl 128 15 30 1000 0 1 \$0-metro_3_time empty metro_3_time
+0 7 0 10 -262144 -1 -1 2400 1;
+#X obj 215 184 hsl 128 15 30 1000 0 1 \$0-metro_4_time empty metro_4_time
+0 7 0 10 -262144 -1 -1 2400 1;
+#X obj 107 148 tgl 15 0 \$0-metro_2_start \$0-metro_2_start_cmd metro_2_on/off
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 107 166 tgl 15 0 \$0-metro_3_start \$0-metro_3_start_cmd metro_3_on/off
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 107 184 tgl 15 0 \$0-metro_4_start \$0-metro_4_start_cmd metro_4_on/off
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 165 202 tgl 15 0 \$0-bit_3_out \$0-bit_3_in bit_3 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 218 202 tgl 15 0 \$0-bit_2_out \$0-bit_2_in bit_2 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 272 203 tgl 15 0 \$0-bit_1_out \$0-bit_1_in bit_1 17 7 0 10
+-262144 -1 -1 0 1;
+#X floatatom 130 225 5 0 0 0 out to_serial -;
+#X coords 0 -1 1 1 275 150 1 100 100;
+#X restore 375 461 pd bit_metros_sub_patch;
+#X text 831 227 Same as the others but packaged for modular use. note:
+this object calls the bit_metros.pd patch and can be copied without
+having to worry about send/receive symbols interfering with eachother.
+;
+#X text 373 431 Makes use of the pd sub patching feature to create
+a tidy packaged GUI oriented function.;
+#X text 374 227 The same patch as on the left but using pd sub patches
+and GUI send a receive symbols to tidy things up.;
+#X text 287 11 Hint: to display GUI objects and text in .pd patch files
+\, right or control click on the canvas \, click properties \, and
+check the box that reads "graph on parent" (hide object name and arguments
+helps keep things visually tidy);
+#N canvas 0 22 450 278 (subpatch) 0;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 855 -12 graph;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 23 0 45 0;
+#X connect 24 0 27 0;
+#X connect 24 0 45 1;
+#X connect 25 0 27 0;
+#X connect 25 0 45 2;
+#X connect 26 0 27 0;
+#X connect 26 0 45 3;
+#X connect 27 0 45 0;
+#X connect 28 0 22 0;
+#X connect 28 0 29 0;
+#X connect 30 0 26 0;
+#X connect 31 0 30 1;
+#X connect 32 0 30 0;
+#X connect 33 0 25 0;
+#X connect 34 0 33 1;
+#X connect 35 0 33 0;
+#X connect 36 0 24 0;
+#X connect 37 0 36 1;
+#X connect 38 0 36 0;
+#X connect 39 0 23 0;
+#X connect 40 0 39 1;
+#X connect 41 0 39 0;
+#X connect 42 0 23 0;
+#X connect 42 0 24 0;
+#X connect 42 0 25 0;
+#X connect 42 0 26 0;
+#X connect 43 0 32 0;
+#X connect 43 0 35 0;
+#X connect 43 0 38 0;
+#X connect 43 0 41 0;
+#X connect 43 0 44 0;
+#X connect 44 0 42 0;
+#X connect 45 0 28 0;

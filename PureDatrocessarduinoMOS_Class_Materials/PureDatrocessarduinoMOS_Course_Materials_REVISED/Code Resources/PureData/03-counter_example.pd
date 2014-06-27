@@ -1,0 +1,52 @@
+#N canvas 439 230 466 231 10;
+#N canvas 374 204 903 324 serial_port 0;
+#X msg 190 178 close;
+#X msg 142 178 open 4;
+#X obj 190 200 comport 4 9600;
+#X obj 190 156 loadbang;
+#X obj 190 222 print Arduino_Says:;
+#X obj 231 178 r to_serial;
+#X obj 102 102 tgl 14 0 empty empty open_serial_port 17 6 0 10 -262144
+-1 -1 0 1;
+#X msg 142 222 set 1;
+#X msg 102 222 set 0;
+#X obj 142 141 sel 1 0;
+#X text 284 199 creation arguments: <port#> <BAUD>;
+#X text 312 221 if you gave the arduino something to say it appears
+in the console;
+#X text 304 178 send things to the serial port via "to_serial" send
+symbol;
+#X connect 0 0 2 0;
+#X connect 0 0 8 0;
+#X connect 1 0 2 0;
+#X connect 1 0 7 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 5 0 2 0;
+#X connect 6 0 9 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 9 0 1 0;
+#X connect 9 1 0 0;
+#X coords 0 -1 1 1 120 18 2 100 100;
+#X restore -65 -75 pd serial_port;
+#X text 60 -74 Activate toggle to enable serial connection to Arduino
+;
+#X obj -50 33 vradio 15 1 0 3 empty empty direction 0 -8 0 10 -262144
+-1 -1 0;
+#X obj -64 -3 metro 1000;
+#X obj -4 -21 hsl 128 15 30 1000 0 1 empty empty tempo 0 7 0 10 -262144
+-1 -1 1600 1;
+#X obj -64 -21 tgl 15 0 empty empty on/off 17 7 0 10 -262144 -1 -1
+0 1;
+#X floatatom -51 108 5 0 0 0 - - -;
+#X obj -64 84 counter 15;
+#X obj -64 127 s to_serial;
+#X text -66 -52 An example of stepping sequentially through values
+using the counter object.;
+#X connect 2 0 7 1;
+#X connect 3 0 7 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 0;
+#X connect 7 0 6 0;
+#X connect 7 0 8 0;

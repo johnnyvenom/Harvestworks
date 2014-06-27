@@ -1,0 +1,39 @@
+#N canvas 0 0 471 416 10;
+#N canvas 374 204 903 324 serial_port 0;
+#X msg 190 178 close;
+#X msg 142 178 open 4;
+#X obj 190 200 comport 4 9600;
+#X obj 190 156 loadbang;
+#X obj 190 222 print Arduino_Says:;
+#X obj 231 178 r to_serial;
+#X obj 102 102 tgl 14 0 empty empty open_serial_port 17 6 0 10 -262144
+-1 -1 1 1;
+#X msg 142 222 set 1;
+#X msg 102 222 set 0;
+#X obj 142 141 sel 1 0;
+#X text 284 199 creation arguments: <port#> <BAUD>;
+#X text 312 221 if you gave the arduino something to say it appears
+in the console;
+#X text 304 178 send things to the serial port via "to_serial" send
+symbol;
+#X floatatom 103 121 5 0 0 1 serial_out to_serial -;
+#X connect 0 0 2 0;
+#X connect 0 0 8 0;
+#X connect 1 0 2 0;
+#X connect 1 0 7 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 5 0 2 0;
+#X connect 6 0 9 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 9 0 1 0;
+#X connect 9 1 0 0;
+#X coords 0 -1 1 1 130 40 2 100 100;
+#X restore -55 -65 pd serial_port;
+#X obj -57 31 serial_sequencer;
+#X text 79 -65 Activate toggle to enable serial connection to Arduino
+;
+#X text -58 -26 This patch is called from the serial_sequencer.pd patch.
+Open it up and see how it works! It's possible to create a pretty powerful
+step sequencer using only a few objects in PD. Have fun!;

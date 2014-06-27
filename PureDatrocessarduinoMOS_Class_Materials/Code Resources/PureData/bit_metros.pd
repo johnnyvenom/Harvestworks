@@ -1,0 +1,110 @@
+#N canvas 0 0 829 568 10;
+#N canvas 552 289 695 143 metros 0;
+#X obj -17 -132 metro 1000;
+#X obj 134 -132 metro 1000;
+#X obj -324 -130 metro 1000;
+#X obj -171 -131 metro 1000;
+#X obj -324 -176 r \$0-metro_1_start;
+#X obj -267 -156 r \$0-metro_1_time;
+#X obj -324 -110 s \$0-bit_1_in;
+#X obj -171 -176 r \$0-metro_2_start;
+#X obj -114 -156 r \$0-metro_2_time;
+#X obj -171 -111 s \$0-bit_2_in;
+#X obj -17 -112 s \$0-bit_3_in;
+#X obj 40 -156 r \$0-metro_3_time;
+#X obj -17 -176 r \$0-metro_3_start;
+#X obj 134 -176 r \$0-metro_4_start;
+#X obj 191 -156 r \$0-metro_4_time;
+#X obj 134 -112 s \$0-bit_4_in;
+#X connect 0 0 10 0;
+#X connect 1 0 15 0;
+#X connect 2 0 6 0;
+#X connect 3 0 9 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 1;
+#X connect 7 0 3 0;
+#X connect 8 0 3 1;
+#X connect 11 0 0 1;
+#X connect 12 0 0 0;
+#X connect 13 0 1 0;
+#X connect 14 0 1 1;
+#X restore 462 245 pd metros;
+#N canvas 835 270 427 242 bit_packer 0;
+#X obj 28 84 t b;
+#X obj 41 155 expr $i1 << 3 | $i2 << 2 | $i3 << 1 | $i4 << 0 \;;
+#X obj 41 201 s to_serial;
+#X obj 41 136 pack f f f f;
+#X obj 41 2 r \$0-bit_4_out;
+#X obj 64 21 r \$0-bit_3_out;
+#X obj 87 40 r \$0-bit_2_out;
+#X obj 110 59 r \$0-bit_1_out;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X connect 5 0 0 0;
+#X connect 6 0 3 2;
+#X connect 6 0 0 0;
+#X connect 7 0 3 3;
+#X connect 7 0 0 0;
+#X restore 462 264 pd bit_packer;
+#N canvas 519 264 644 181 on/off_messages 0;
+#X obj -93 -435 sel 0;
+#X floatatom 107 -411 5 0 0 0 - - -;
+#X obj -12 -452 r \$0-master_on_off;
+#X obj 10 -402 pack f \$0;
+#X msg 10 -379 \; \$2-metro_1_start_cmd \$1 \; \$2-metro_2_start_cmd
+\$1 \; \$2-metro_3_start_cmd \$1 \; \$2-metro_4_start_cmd \$1 \;;
+#X obj -93 -415 \$0;
+#X msg -93 -396 \; \$1-bit_1_in 0 \; \$1-bit_2_in 0 \; \$1-bit_3_in
+0 \; \$1-bit_4_in 0 \;;
+#X obj 107 -451 loadbang;
+#X obj 107 -431 \$0;
+#X text 179 -427 \$0 is a unique number that enables multiple instances
+of a patch or sub_patch to run independently. symbols with \$0- prepended
+to them will have a unique number associated with them \, giving them
+a local scope.;
+#X connect 0 0 5 0;
+#X connect 2 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
+#X connect 8 0 1 0;
+#X restore 462 283 pd on/off_messages;
+#X text 457 96 Using the "graph on parent" feature in the properties
+of the patch \, you can create clean self contained GUI oriented modules.
+;
+#X obj 101 101 cnv 15 348 198 empty empty empty 20 12 0 14 -204800
+-66577 0;
+#X obj 174 232 tgl 15 0 \$0-bit_4_out \$0-bit_4_in bit_4 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 264 143 hsl 128 15 30 1000 0 1 \$0-metro_1_time empty metro_1_time
+0 7 0 10 -262144 -1 -1 1500 1;
+#X obj 156 143 tgl 15 0 \$0-metro_1_start \$0-metro_1_start_cmd metro_1_on/off
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 107 108 tgl 15 0 \$0-master_on_off empty start/stop 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 264 161 hsl 128 15 30 1000 0 1 \$0-metro_2_time empty metro_2_time
+0 7 0 10 -262144 -1 -1 1500 1;
+#X obj 264 179 hsl 128 15 30 1000 0 1 \$0-metro_3_time empty metro_3_time
+0 7 0 10 -262144 -1 -1 2500 1;
+#X obj 264 197 hsl 128 15 30 1000 0 1 \$0-metro_4_time empty metro_4_time
+0 7 0 10 -262144 -1 -1 1600 1;
+#X obj 156 161 tgl 15 0 \$0-metro_2_start \$0-metro_2_start_cmd metro_2_on/off
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 156 179 tgl 15 0 \$0-metro_3_start \$0-metro_3_start_cmd metro_3_on/off
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 156 197 tgl 15 0 \$0-metro_4_start \$0-metro_4_start_cmd metro_4_on/off
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 232 232 tgl 15 0 \$0-bit_3_out \$0-bit_3_in bit_3 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 285 232 tgl 15 0 \$0-bit_2_out \$0-bit_2_in bit_2 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 339 233 tgl 15 0 \$0-bit_1_out \$0-bit_1_in bit_1 17 7 0 10
+-262144 -1 -1 0 1;
+#X floatatom 253 266 5 0 0 0 out to_serial -;
+#X text 580 282 take a look in here to see how this instance runs independently
+of the other examples;
+#X coords 0 -1 1 1 350 200 1 100 100;

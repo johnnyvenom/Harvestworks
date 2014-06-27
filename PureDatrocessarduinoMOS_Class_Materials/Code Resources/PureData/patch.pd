@@ -1,0 +1,4 @@
+#N canvas 0 0 1350 709 10;
+#X text 100 123 You can call .pd files as sub-patches too! This is
+the patch.pd file called as an object.;
+#X coords 0 -1 1 1 330 50 1 100 100;

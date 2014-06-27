@@ -1,0 +1,48 @@
+#N canvas 592 62 374 590 10;
+#X text -312 4 In Pure Data (PD) \, the comport object allows us to
+communicate over serial. To find out more about this and other objects
+\, command+click or right click and select "help".;
+#X obj -306 165 comport;
+#X floatatom -176 272 5 1 16 1 select_port - -;
+#X obj -191 294 i;
+#X msg -191 318 open \$1;
+#X msg -232 318 close;
+#X obj -191 251 bng 15 250 50 0 empty empty open_port 17 7 0 10 -262144
+-1 -1;
+#X msg -296 318 baud 9600;
+#X text -312 64 1 First thing we need to do is figure out what ports
+are available. Click "devices" and wait for the results to appear in
+the PD console.;
+#X obj -296 294 loadbang;
+#X obj -232 233 bng 15 250 50 0 empty empty close_port 17 7 0 10 -262144
+-1 -1;
+#X msg -306 109 devices;
+#X obj -302 445 hradio 15 1 0 16 ctrl empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X floatatom -302 425 5 0 15 0 - - ctrl;
+#X obj -299 464 hsl 128 15 0 15 0 0 ctrl empty empty -2 -8 0 10 -262144
+-1 -1 0 0;
+#X text -313 190 2 Find the arduino! Select an available port and open
+a connection.;
+#X floatatom -302 564 5 0 0 0 - - -;
+#X text -312 387 3 When you play with these GUIs \, your LEDs should
+change. If not \, then try a different port.;
+#X text -311 485 Command+click or right click and select "properties"
+to see how they're setup. Note the send symbol is set to "comport_control".
+Receive objects with that symbol will receive the values.;
+#X obj -232 344 s ctrl;
+#X obj -298 137 r ctrl;
+#X obj -302 540 r ctrl;
+#X connect 2 0 3 1;
+#X connect 3 0 4 0;
+#X connect 4 0 19 0;
+#X connect 5 0 19 0;
+#X connect 6 0 5 0;
+#X connect 6 0 3 0;
+#X connect 7 0 19 0;
+#X connect 9 0 7 0;
+#X connect 9 0 5 0;
+#X connect 10 0 5 0;
+#X connect 11 0 1 0;
+#X connect 20 0 1 0;
+#X connect 21 0 16 0;
