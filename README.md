@@ -14,11 +14,11 @@ Here is a collection of free resources for things we are working on at Harvestwo
 -------------
 
 #### *This is the link to GitHub Repository: [http://github.com/Harvestworks/Resources](http://github.com/Harvestworks/Resources)*
-#### *Still available via Dropbox as well: [http://goo.gl/WGGCqr](http://goo.gl/WGGCqr)*
+#### **NOTE: I have moved this off of Dropbox, so the GitHub repo is the only source now.**
 
 -----------
 
-**Documents are written in Markdown. If you don't have a program that parses Markdown into an easy to read format (usually PDF or HTML), you can read directly from GitHub or Dropbox website.**
+**Documents are written in Markdown. If you don't have a program that parses Markdown into an easy to read format (usually PDF or HTML), you can read directly from GitHub.**
 
 If you want to save a local copy, select 'Print' from your browser), and Save to PDF.
 
