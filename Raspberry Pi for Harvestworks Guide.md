@@ -24,6 +24,9 @@ This guide is a work in progress...
 	- [RPi Forums](http://www.raspberrypi.org/forums/)
 - Awesome tutorials that work and are usually easy to follow:
 	- [Adafruit - Learn Respberry Pi](https://learn.adafruit.com/category/learn-raspberry-pi)
+- Some good utility scripts for doing some basic things. (I haven't tested them yet.)
+	- [IvanX's Raspberry Pi page](http://ivanx.com/raspberrypi/)
+
 
 ------------	
 
@@ -63,7 +66,7 @@ There is a WiFi GUI tool on the desktop. Scan for available network and connect 
 Learn more about connecting to network [here](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup).
 
 ### Internet sharing via your Mac's ethernet, and configuration with home network/router....
---Need instructions--
+[Guide To **Direct Network Connection** Raspberry Pi Remote Connections – Without A Network!](http://pihw.wordpress.com/guides/direct-network-connection/) ...tested 9/12/14 and it works! Use in connection with Screen Share and Finder integration below. 
 
 ### Bluetooth connectivity
 If you want to use a bluetooth keyboard or mouse, or use other bluetooth peripherals you need to have a bluetooth dongle, or better yet a WiFi/Bluetooth combo dongle (saves space). Then you need to go through a bunch of pretty complex installations and configurations to make it work. BUT, once you have devices paired and stored (and there is a GUI tool to help you with this) it will remember the device and hook up every time. *Theoretically.* My success has been 50/50. 
