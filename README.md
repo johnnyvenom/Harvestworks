@@ -15,7 +15,7 @@ Here is a collection of free resources for things we are working on at Harvestwo
 
 ## Update: 
 
-**The official Harvestworks GitHub organization I created in 2014 has now been deleted. This directory of resources has been parked here for archival purposes. 
+**The official Harvestworks GitHub organization I created in 2014 has now been deleted. This directory of resources has been parked here for archival purposes.** 
 
 #### *This is the link to GitHub Repository: [http://github.com//johnnyvenom/Harvestworks](http://github.com/johnnyvenom/Harvestworks/)*
 #### **NOTE: I have moved this off of Dropbox, so the GitHub repo is the only source now.**
